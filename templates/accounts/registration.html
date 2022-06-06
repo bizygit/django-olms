@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Register Yourself
+{% endblock title %}
+
+
+{% block body %}
+    <h1>Registration Form</h1>
+    <form action="/accounts/register" method="post" class="register">
+        {% csrf_token %}
+        <table>
+            {{userform.as_table}}
+            <tr>
+                <td colspan="2" align="right">
+                    <input type="submit" value="Register">
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endblock body %}

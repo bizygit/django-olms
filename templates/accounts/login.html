@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login Here
+{% endblock title %}
+
+
+
+{% block body %}
+    <form action="/accounts/login/" method="post" class="login">
+        {% csrf_token %}
+        <table>
+            {{loginform.as_table}}
+            <tr>
+                <td colspan="2" align="right">
+                    <input type="submit" value="Login">
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endblock body %}

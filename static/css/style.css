@@ -1,0 +1,203 @@
+body {
+    background-color: #f1f1f1;
+}
+
+.col-sm-8 {
+    background-color: #fff;
+    min-height: 510px;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+/* .row.content {
+    height: 450px
+} */
+
+.sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+}
+
+.navbar-brand img {
+    width: 200px;
+    height: 30px;
+}
+
+.login {
+    margin: 10%;
+}
+
+.login,
+.register {
+    border: 1px dotted #000;
+    padding: 2%;
+}
+
+.enroll {
+    border: 1px dotted #000;
+    padding: 2%;
+    margin: 4% 25% 8% 25%; 
+}
+
+.login img,
+.register img {
+    width: 100px;
+    height: 100px;
+    border: 3px dotted #000;
+    margin: 0 34%;
+}
+
+.login .login_text,
+.register .register_text {
+    text-align: center;
+    font-size: 10px;
+    color: #8E8478;
+    font-weight: 500;
+    margin: 3% 0;
+}
+
+.login label,
+.register label {
+    color: #8E8478;
+}
+
+.login input,
+.register input,
+.enroll select {
+    padding: 4px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+input[type=submit] {
+    width: 50%;
+}
+
+.login a,
+.register a {
+    float: right;
+    color: #0F9D58;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login .btn,
+.register .btn,
+.enroll .btn {
+    background-color: #0F9D58;
+    color: #fff;
+    width: 100%;
+    margin-top: 2%;
+    padding: 3% 0;
+    font-size: 16px;
+    border: none;
+}
+
+.enroll .btn {
+    width: 25%;
+    padding: 2% 0;
+}
+
+.contact_buttons {
+    display: flex;
+}
+
+.contact_buttons .btn_contact {
+    background-color: #0F9D58;
+    color: #fff;
+    width: 50%;
+    margin: 2%;
+    padding: 3% 0;
+    font-size: 14px;
+    border: none;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+}
+
+.product-list img {
+    width: 100%;
+    max-height: 200px;
+    margin: 10% 0;
+}
+
+.about_us img {
+    max-width: 400px;
+    height: auto;
+}
+
+.about_us .row {
+    margin: 5% 0;
+}
+
+.enrolled_list .enrolled_course {
+    text-align:center; 
+    font-size:16px;
+    background-color: #0F9D58;
+    margin-bottom: 5%;
+    color: #FFF;
+}
+
+.login table {
+    margin: 0 27%;
+}
+.register table {
+    margin: 0 10%;
+}
+
+table {
+    border: 2px solid #ddd;
+    margin-bottom: 5% ;
+}
+
+th {
+    text-align: center;
+    background: #ddd;
+}
+
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+    .row.content {
+        height:auto;
+    }
+    
+    .contact_buttons {
+        display: block;
+    }
+    
+    .contact_buttons .btn_contact {
+        width: 100%;
+    }
+
+    .product-list img {
+        width: auto;
+    }
+    
+    .about_us img {
+        max-width: 300px;
+    }
+
+    .enroll {
+        margin: 8% 0;
+    }
+
+    .enroll .btn {
+        width: 50%;
+        padding: 2% 0;
+    }
+}

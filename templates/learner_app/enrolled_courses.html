@@ -1,0 +1,24 @@
+<!--here we inherit base.html page.-->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Enrolled Courses {% endblock title %}
+
+{% block body %}
+<table border="1" class="table table-striped w-75">
+    <tr>
+        <th>SR</th>
+        <th>Course Name</th>
+        <th colspan="3">Actions</th>
+    </tr>
+    {% for course in enrolledcourses %}
+        {% if request.user.id == course.learner_id_id %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{course.course_id}}</td>
+                <td><a href="/learner_app/enroll-delete/{{course.enrollment_id}}" class="btn btn-danger">Delete</a></td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+{% endblock body %}

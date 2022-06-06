@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{% static 'images/e-learning-icon.jpg' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap3.4.1.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/bootstrap3.4.1.min.js' %}"> </script>
+    <script src="{% static 'js/jquery3.5.1.min.js' %}"> </script>
+    <title>{% block title %} {% endblock title %}</title>
+</head>
+<body>
+  <div id="headerDiv">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="/learner_app"><img src="{% static 'images/e-learning.png' %}" alt="e-learning"></img></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav menu">
+            <li><a href="/learner_app">Home</a></li>
+
+            {% if request.user.is_staff %}
+              <li><a href="/learner_app/add-course">Add Course</a></li>
+              <li><a href="/learner_app/list-course">List Course</a></li>
+              <li><a href="/learner_app/learner-enrolled-course">Learner Enrolled Course</a></li>
+            {% elif request.user.id %}
+              <li><a href="/learner_app/enroll-course">Enroll Course</a></li>
+              <li><a href="/learner_app/enrolled-courses">View Enrolled Course</a></li>
+            {% endif %}
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            {% if request.user.id %}
+              <li><a href="/accounts/logout"><span class="glyphicon glyphicon-log-in"></span>&nbsp Logout</a></li>
+            {% else %}
+              <li><a href="/accounts/register"><span class="glyphicon glyphicon-log-out"></span>&nbsp Register</a></li>
+              <li><a href="/accounts/login"><span class="glyphicon glyphicon-log-in"></span>&nbsp Login</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container-fluid text-center">    
+    <div class="row content">
+      <div class="col-sm-2 sidenav"></div>
+
+      <div class="col-sm-8 row align-items-center justify-content-center">
+        {% if messages %}    
+            <div class="messages">
+                {% for msg in messages  %}
+                    <p>{{msg}}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% block body %}
+        {% endblock body %}
+      </div>
+
+      <div class="col-sm-2 sidenav"></div>
+    </div>
+  </div>
+  
+  <div id="footerDiv">
+    <footer class="container-fluid text-center">
+      <p>Copyright 2020-2021. All Rights Reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

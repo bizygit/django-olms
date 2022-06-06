@@ -1,0 +1,18 @@
+<!--here we inherit base.html page.-->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} e-learning {% endblock title %}
+
+{% block body %}
+{% if request.user.id %}
+<h1>Welcome {{request.user.first_name}} {{request.user.last_name}}</h1><br>
+<h4>Welcome to Online Learning Management System <b>(OLMS).</b></h4>
+{% else %}
+<h1>Welcome Learner</h1><br>
+<h4>Welcome to Online Learning Management System <b>(OLMS).</b></h4>
+<h5>Please <b>Login/Register</b> to proceed.</h5><br>
+<a class="btn btn-primary" href="/accounts/register" role="button">Register</a>
+<a class="btn btn-success" href="/accounts/login" role="button">Login</a>
+{% endif %}
+{% endblock body %}
