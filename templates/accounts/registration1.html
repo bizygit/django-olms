@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Register Yourself
+{% endblock title %}
+
+
+{% block body %}
+    <h1>Registration1 Form</h1>
+    <form action="/accounts/register1/" method="post" class="register">
+        {% csrf_token %}
+        <!-- <table>
+            {{userform1.as_table}}
+            <tr>
+                <td colspan="2" align="right">
+                    <input type="submit" value="Register1">
+                </td>
+            </tr>
+        </table> -->
+        <label for="">Email:</label>
+        <br>
+        <input type="email" name="email">
+        <br>
+        <label for="">Username:</label>
+        <br>
+        <input type="text" name="username">
+        <br>
+        <label for="">Password:</label>
+        <br>
+        <input type="password" name="password">
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="">
+        {% for message in messages %}
+        <span> {{message}}</span>
+        {% endfor %}
+    </div>
+{% endblock body %}
